@@ -13,6 +13,10 @@
 # 集成config
 wget -qO- https://raw.githubusercontent.com/Kwonelee/iStoreOS-Actions/refs/heads/main/files/etc/rc.local > package/base-files/files/etc/rc.local
 
+# 复制设备树文件
+mkdir -p target/linux/rockchip/dts/rk3399
+cp -f $GITHUB_WORKSPACE/armv8/dts/rk3399/rk3399-emb-3531.dts target/linux/rockchip/dts/rk3399/
+
 # 移除要替换的包
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
